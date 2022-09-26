@@ -25,6 +25,7 @@ app.get("/api/getblog/:id",(req,res)=>{
     })
 })
 
+
 app.get("/api/getblogs",(req,res)=>{
     blog.find((err,doc)=>{
         if(err) return console.log(err)
