@@ -33,7 +33,23 @@ app.get("/api/getblogs",(req,res)=>{
     })
 })
 
+app.delete("/api/deleteblog/:id",(req,res)=>{
+    blog.deleteOne({id:req.params.id},(err,doc)=>{
+        if(err) return console.log(err)
+        res.json("blog deleted")
+    })
+})
 
+app.post("/api/updateblog",(req,res)=>{
+    const id = req.body.id
+    const blogContent = req.body.blog
+    blog.updateOne({id:id},{
+        $set:{blog:blogContent}},(err,doc)=>{
+ if(err) return console.log(err)
+res.json("blog updated")
+        }) 
+
+})
 
 app.post("/api/addblog",(req,res)=>{
     const addblog = new blog({
