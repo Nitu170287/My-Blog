@@ -1,30 +1,26 @@
+import "./App.css";
+import React, { Component } from "react";
 
-import './App.css';
-import React,{Component} from "react"
+import Header from "./components/BlogIntroPage/main";
+import BlogContent from "./components/BlogIntroPage/main";
+import BlogAdd from "./components/blogPost/blogAdd";
+import BlogPostDayWise from "./components/blogPost/blogPostDayWise";
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 
-import Header from './components/BlogIntroPage/top';
-import BlogContent from './components/BlogIntroPage/bottom';
-import BlogAdd from './components/blogPost/blogAdd';
-import {BrowserRouter, Routes, Route, Link ,NavLink} from "react-router-dom"
-
-class App extends Component {
-  
-
-  render(){
+const App = (props) => {
   return (
-    <div>
-      
-      
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<BlogContent/>}></Route>
-        <Route path="blogadd" element={<BlogAdd/>}></Route>
-        </Routes>
-      </BrowserRouter>
-    
-    </div>
+        <Route path="/" element={<BlogContent />}></Route>
+        <Route path="/blogadd" element={<BlogAdd />}></Route>
+        <Route
+          path="/day/:day"
+          element={<BlogPostDayWise {...props} />}
+        ></Route>
+        <Route path="*" element={<>Sorry , Nothing found</>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
-}
+};
 
 export default App;
