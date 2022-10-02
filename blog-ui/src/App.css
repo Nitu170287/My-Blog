@@ -63,7 +63,13 @@
     transform: rotate(360deg);
   }
 }
-
+.blogHeading{
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  
+  
+}
 
 .footer-padding {
 	padding-bottom: 60px;
@@ -75,5 +81,5 @@
 	bottom: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #8ddfdf;
+	background-color: #5ce1e6;
 }
