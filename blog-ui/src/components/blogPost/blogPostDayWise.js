@@ -21,7 +21,11 @@ const BlogPostDayWise = (props) => {
         </div>
         <hr className="mt-4" />
 
-        <div className="mt-6">{dayBlog}</div>
+        {params.type == "edit" ? (
+          <textarea value={dayBlog}></textarea>
+        ) : (
+          <div className="mt-6">{dayBlog}</div>
+        )}
 
         <button
           onClick={() => {

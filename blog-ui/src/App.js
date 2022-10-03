@@ -14,7 +14,7 @@ const App = (props) => {
         <Route path="/" element={<BlogContent />}></Route>
         <Route path="/blogadd" element={<BlogAdd />}></Route>
         <Route
-          path="/day/:day"
+          path="/day/:day/:type"
           element={<BlogPostDayWise {...props} />}
         ></Route>
         <Route path="*" element={<>Sorry , Nothing found</>}></Route>
